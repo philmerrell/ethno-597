@@ -1,0 +1,44 @@
+$boise-state-primary: (
+  100: #0033A0,
+  300: #0072CE,
+  500: #0033A0,
+  700: #0033A0,
+  800: #0033A0,
+  900: #3F4444,
+  contrast: (
+    100: white,
+    300: white,
+    500: white,
+    700: white,
+    800: white,
+    900: white,
+  )
+);
+
+$boise-state-accent: (
+  100: #0072CE,
+  500: #0072CE,
+  700: #0072CE,
+  contrast: (
+    100: white,
+    500: white,
+    700: white,
+  )
+);
+
+$boise-state-warn: (
+  100: #D64309,
+  500: #D64309,
+  700: #D64309,
+  contrast: (
+    100: white,
+    500: white,
+    700: white,
+  )
+);
+
+$anms-primary: mat-palette($boise-state-primary, 800, 300, 900);
+$anms-accent: mat-palette($boise-state-accent);
+$anms-warn: mat-palette($boise-state-warn);
+
+$anms-theme: mat-light-theme($anms-primary, $anms-accent, $anms-warn);
