@@ -133,6 +133,10 @@
 
         <div>
             <h2>Preview:</h2>
+
+            <anms-phone-shell *ngIf="channelGroup.controls.channel.value === 'Push Notification'">
+              <div style="background: url(/assets/ios-homescreen.jpg); background-size: 100%; width: 100%; height: 100%;"></div>
+            </anms-phone-shell>
         
         
             <anms-phone-shell #activityFeedPreview *ngIf="channelGroup.controls.channel.value === 'Activity Feed'">

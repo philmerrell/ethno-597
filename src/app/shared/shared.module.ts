@@ -25,14 +25,14 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatNativeDateModule } from '@angular/material/core';
 
-
-
 import { CKEditorModule } from 'ng2-ckeditor';
 import { BigInputComponent } from './big-input/big-input.component';
 import { BigInputActionComponent } from './big-input/big-input-action.component';
 import { TrustHtmlPipe } from '@app/shared/pipes/trust-html.pipe';
 import { TrustUrlPipe } from '@app/shared/pipes/trust-url.pipe';
 import { PhoneShellComponent } from './phone-shell/phone-shell.component';
+import { ActivityFeedCardComponent } from './activity-feed-card/activity-feed-card.component';
+import { AppShellComponent } from './app-shell/app-shell.component';
 
 @NgModule({
   imports: [
@@ -64,7 +64,14 @@ import { PhoneShellComponent } from './phone-shell/phone-shell.component';
     MatDatepickerModule,
     MatNativeDateModule
   ],
-  declarations: [BigInputComponent, BigInputActionComponent, TrustHtmlPipe, TrustUrlPipe, PhoneShellComponent],
+  declarations: [
+    BigInputComponent,
+    BigInputActionComponent,
+    TrustHtmlPipe, TrustUrlPipe,
+    PhoneShellComponent,
+    ActivityFeedCardComponent,
+    AppShellComponent
+  ],
   exports: [
     CommonModule,
     FormsModule,
@@ -95,7 +102,9 @@ import { PhoneShellComponent } from './phone-shell/phone-shell.component';
     BigInputComponent,
     BigInputActionComponent,
     TrustHtmlPipe, TrustUrlPipe,
-    PhoneShellComponent
+    PhoneShellComponent,
+    AppShellComponent,
+    ActivityFeedCardComponent
   ]
 })
-export class SharedModule {}
+export class SharedModule { }

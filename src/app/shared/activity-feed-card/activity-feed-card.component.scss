@@ -1,0 +1,43 @@
+.example-header-image {
+  height: 30px;
+  width: 30px;
+  background-image: url('/assets/nav-logo.png');
+  background-size: auto 60%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+mat-card {
+  padding: 0 10px 10px 10px;
+  margin-top: 20px;
+}
+
+mat-card-subtitle {
+  font-size: 70%;
+  margin-bottom: 0;
+}
+
+mat-card-header {
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+mat-card-actions {
+  padding-right: 10px;
+}
+
+h4 {
+  font-weight: 400;
+  font-size: 95%;
+  margin-bottom: 0;
+}
+
+p {
+  font-size: 80%;
+  color: #888
+}
+
+.activity-feed-card-image {
+  margin: 0;
+  width: 100%;
+}

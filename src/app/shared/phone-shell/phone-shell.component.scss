@@ -1,0 +1,17 @@
+.phone-image {
+  height: 781px;
+  width: 400px;
+  background: url('/assets/mobile-preview.png');
+  background-size: cover;
+  position: relative;
+}
+
+.phone-content {
+  position: absolute;
+  top: 120px;
+  bottom: 120px;
+  left: 48px;
+  right: 48px;
+  border: 1px solid black;
+  overflow: hidden;
+}

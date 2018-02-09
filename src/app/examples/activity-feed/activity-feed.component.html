@@ -7,9 +7,10 @@
     <div class="col-md-6">
       <h2>Activity Feed Explanation</h2>
       <p>
-        The <code>activity feed</code> feature is analagous to a newsfeed. 
-        Its goal is to present fresh and timely content that is personalized and 
-        should encourage students to check for new information regularly.
+        The <code>activity feed</code> feature is analagous to a newsfeed. Similar to 
+        applications such as Facebook, Twitter, etc., its goal is to present fresh and 
+        timely content that is personalized and should encourage students to check for 
+        new information regularly.
       </p>
       <p>
         Content in the feed is ephemeral in nature. Items are pushed down the feed 
@@ -17,17 +18,24 @@
         information for students.          
       </p>
       <p>
-        <strong>Examples:</strong> Campus update articles, BSPR content, sports, campus events, social media posts, timely reminders, 
-        upcoming academic calendar items
-
+        <strong>Message priority:</strong> <code>Low</code> <code>Medium</code>
       </p>
+      <p>
+        <strong>Examples:</strong> Campus update articles, BSPR content, sports, campus events, social media posts, timely reminders, 
+          upcoming academic calendar items
+        </p>
       <br>
         
     </div>
     <div class="offset-md-1  col-md-5">
       <h2>Example</h2>
       <anms-phone-shell>
-        test
+        <anms-app-shell>
+            <anms-activity-feed-card 
+              *ngFor="let item of cards" 
+              [content]="item">
+            </anms-activity-feed-card>
+        </anms-app-shell>
       </anms-phone-shell>
     </div>
   </div>

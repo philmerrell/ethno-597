@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-subtitle>{{ content.target }}</mat-card-subtitle>
+  </mat-card-header>
+  <img class="activity-feed-card-image" mat-card-image [src]="content.imageUrl | trustUrl" alt="">
+    <mat-card-content>
+    <h4>{{ content.title }}</h4>
+    <p>{{ content.summary }}</p>
+    <!-- <mat-card-actions>
+      <button mat-button color="warn">Read</button>
+    </mat-card-actions> -->
+  </mat-card-content>
+</mat-card>
