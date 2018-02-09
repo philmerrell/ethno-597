@@ -41,7 +41,8 @@ export class CreateComponent implements OnInit {
 
     this.activityFeedInputGroup = this.fb.group({
       headline: ['Annual Engineering and Science Festival is Feb. 3', Validators.required],
-      description: ['All events are free and the festival is being held as an open house; the public is invited to come any time between 9 a.m.-4 p.m.', Validators.required],
+      description: ['All events are free and the festival is being held as an open house; ' +
+      'the public is invited to come any time between 9 a.m.-4 p.m.', Validators.required],
       mediaType: ['', Validators.required],
       imageUrl: ['https://news.boisestate.edu/update/files/2017/01/EngineeringScienceRobot620x320-500x258.jpg'],
       linkUrl: ['']
@@ -49,8 +50,7 @@ export class CreateComponent implements OnInit {
   }
 
   openSnackBar() {
-    this.snackBar.open('Item Created', 'Okay', {
-      duration: 3000});
+    this.snackBar.open('Success. Now you can view basic analytics about your communications.', 'Okay');
   }
 
 

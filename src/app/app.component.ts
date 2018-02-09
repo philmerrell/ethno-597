@@ -33,8 +33,9 @@ export class AppComponent implements OnInit, OnDestroy {
   version = env.versions.app;
   year = new Date().getFullYear();
   logo = require('../assets/nav-logo.png');
+  toolbarTitle = '';
   navigation = [
-    { link: 'create', label: 'Create' },
+    { link: 'create', label: 'Demo' },
     { link: 'examples', label: 'Examples'},
     { link: 'about', label: 'About' }
     // { link: 'features', label: 'Features' },
@@ -87,9 +88,8 @@ export class AppComponent implements OnInit, OnDestroy {
           lastChild = lastChild.children[0];
         }
         const { title } = lastChild.data;
-        this.titleService.setTitle(
-          title ? `${title} - ${env.appName}` : env.appName
-        );
+        this.titleService.setTitle(title ? `${title} - ${env.appName}` : env.appName);
+        this.toolbarTitle = title;
       });
   }
 

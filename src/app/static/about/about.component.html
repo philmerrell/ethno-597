@@ -1,7 +1,7 @@
 <div class="background">
   <div class="gradient">
     <div class="container">
-      <h1>ETHNO 597 Project</h1>
+      <!-- <h1>ETHNO 597 Project</h1> -->
       <div class="actions">
         <a [ngClass]="animateOnRouteEnter"
            mat-raised-button color="primary" routerLink="../features">
@@ -23,7 +23,26 @@
           <i class="fa fa-medium"></i> Check Blog Post
         </a>
       </div>
-      <div class="get-started" [ngClass]="animateOnRouteEnter">
+      <mat-card [ngClass]="animateOnRouteEnter" class="get-started">
+        <mat-card-content>
+          <h2>About</h2>
+          <p>
+            This application is the result of a design ethnography course at Boise State University
+            <small><em>(ETHNO 597: Fundamentals of Design Ethnography)</em></small>. It explores ideas 
+            and potential solutions through proof of concept demos allowing administrators to send targeted 
+            communications to students through an application on their mobile device. The methods used to design these 
+            high-fidelity mock-ups were customer journey mapping, empathy maps, and stakeholder interviews.
+          </p>
+          <h3>Interviews:</h3>
+          <h3>Design Persona:</h3>
+          Personas help us to answer who are we designing for. They are useful for helping to align strategy and goals to particular groups of users.
+          <h3>Customer Journey Map:</h3>
+          <p>
+            This customer journey contains a  
+          </p>
+        </mat-card-content>
+      </mat-card>
+      <!-- <div class="get-started" [ngClass]="animateOnRouteEnter">
         <h2>Getting started</h2>
         <code>git clone
           https://github.com/tomastrajan/angular-ngrx-material-starter.git
@@ -31,7 +50,7 @@
         <code>cd new-project</code><br>
         <code>npm install</code><br>
         <code>npm start</code>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

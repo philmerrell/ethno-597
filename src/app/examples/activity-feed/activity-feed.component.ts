@@ -12,8 +12,16 @@ export class ActivityFeedComponent implements OnInit {
     {
       title: 'Annual Engineering and Science Festival is Feb. 3',
       target: 'College of Engineering',
-      summary: 'All events are free and the festival is being held as an open house; the public is invited to come any time between 9 a.m.-4 p.m.',
+      summary: 'All events are free and the festival is being held as an open house; the public is invited ' +
+      'to come any time between 9 a.m.-4 p.m.',
       imageUrl: 'https://news.boisestate.edu/update/files/2017/01/EngineeringScienceRobot620x320-500x258.jpg',
+      linkeUrl: ''
+    },
+    {
+      title: 'Boise State Unveils New School of the Arts',
+      target: 'College of Arts and Sciences',
+      summary: 'Debuting this fall, the new school encompasses music, art, creative writing and theatre arts.',
+      imageUrl: 'https://focus.boisestate.edu/wp-content/uploads/2017/12/D_1208_055_055-copy.png',
       linkeUrl: ''
     },
     {

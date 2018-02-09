@@ -20,21 +20,21 @@ const routes: Routes = [
         path: 'activity-feed',
         component: ActivityFeedComponent,
         data: {
-          title: 'Activity Feed'
+          title: 'Example: Activity Feed'
         }
       },
       {
         path: 'stock-market',
         component: StockMarketComponent,
         data: {
-          title: 'Stock Market'
+          title: 'Example: Push Notification'
         }
       },
       {
         path: 'theming',
         component: ParentComponent,
         data: {
-          title: 'Theming'
+          title: 'Example: Email'
         }
       }
     ]

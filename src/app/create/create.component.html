@@ -1,263 +1,260 @@
-
-
-
-
 <div class="container">
   <div class="row">
-    <div class="offset-md-2 col-md-8 entry">
-        <mat-card>
-            <mat-card-content>
-                <mat-vertical-stepper linear>
-                    <mat-step [stepControl]="channelGroup">
-                      <ng-template matStepLabel>Select a Channel<span>: <strong>{{ channelGroup.controls.channel.value }}</strong></span></ng-template>
-                      <div fxLayout="column" fxLayoutAlign="space-around start">
-                        <form [formGroup]="channelGroup">
-                          <mat-form-field>
-                            <mat-select formControlName="channel" placeholder="Channels">
-                              <mat-option value="Activity Feed">
-                                Activity Feed
-                              </mat-option>
-                              <mat-option value="Email">
-                                Email
-                              </mat-option>
-                              <mat-option value="Push Notification">
-                                Push Notification
-                              </mat-option>
-                            </mat-select>
-                          </mat-form-field>
-                        </form>
-                        <button color="accent" mat-button mat-raised-button matStepperNext>Next</button>
-                      </div>
-                    </mat-step>
-                    <mat-step [stepControl]="targetGroup">
-                      <ng-template matStepLabel>Select a Target Audience<span>: <strong>{{ targetGroup.controls.target.value }}</strong></span></ng-template>
-                      <div fxLayout="column" fxLayoutAlign="space-around start">
-                        <form [formGroup]="targetGroup">
-                          <h3>Students:</h3>
-                          <mat-accordion>
-                              <mat-expansion-panel>
-                                <mat-expansion-panel-header>
-                                  <mat-panel-title>
-                                    By College
-                                  </mat-panel-title>
-                                </mat-expansion-panel-header>
-                                <mat-radio-group class="example-radio-group" formControlName="target">
-                                  <mat-radio-button *ngFor="let college of targets.colleges" [value]="college" class="example-radio-button">{{college}}</mat-radio-button>
-                                </mat-radio-group>
-                                <mat-action-row>
-                                    <button color="accent" mat-button mat-raised-button matStepperNext>Next</button>
-                                </mat-action-row>
-                              </mat-expansion-panel>
-                              <mat-expansion-panel>
-                                <mat-expansion-panel-header>
-                                  <mat-panel-title>
-                                    By Major
-                                  </mat-panel-title>
-                                </mat-expansion-panel-header>
-                                <p>I'm visible because I am open</p>
-                              </mat-expansion-panel>
-                            </mat-accordion>
-                          <h3>Employees:</h3>
-                        </form>
-                      </div>
-                    </mat-step>
-                    <mat-step label="Create Communication">
-                      
-                      <ckeditor *ngIf="channelGroup.controls.channel.value === 'Email'"
-                        [(ngModel)]="emailContent"
-                        [config]="{uiColor: '#a4a4a4'}"
-                        debounce="500">
-                      </ckeditor>
-              
-              
-                      <div *ngIf="channelGroup.controls.channel.value === 'Activity Feed'">
-                        <form [formGroup]="activityFeedInputGroup">
-                          <mat-form-field class="full-width">
-                            <input matInput formControlName="headline" placeholder="Headline">
-                          </mat-form-field>
-                        
-                          <mat-form-field class="full-width">
-                            <textarea matInput formControlName="description" placeholder="Description"></textarea>
-                          </mat-form-field>
-              
-                          <mat-form-field class="full-width">
-                            <input matInput [matDatepicker]="picker" placeholder="Choose a date">
-                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                            <mat-datepicker #picker></mat-datepicker>
-                          </mat-form-field>
-              
-                          <mat-form-field class="full-width">
-                            <mat-select formControlName="mediaType" placeholder="Type">
-                              <mat-option value="Audio">
-                                Audio
-                              </mat-option>
-                              <mat-option value="Calendar Event">
-                                Calendar Event
-                              </mat-option>
-                              <mat-option value="Content Link">
-                                Content Link
-                              </mat-option>
-                              <mat-option value="Video">
-                                Video
-                              </mat-option>
-                            </mat-select>
-                          </mat-form-field>
-              
-                          <mat-form-field class="full-width">
-                            <input matInput formControlName="linkUrl" placeholder="Link URL" type="url">
-                          </mat-form-field>
-              
-                          <mat-form-field class="full-width">
-                            <input matInput formControlName="imageUrl" placeholder="Image URL" type="url">
-                          </mat-form-field>
-              
-              
-                        </form>
-                      </div>
-              
-              
-                    </mat-step>
-                  </mat-vertical-stepper>
-        
-        
-                  <mat-action-row>
-                      <button color="warn" routerLink="/" (click)="openSnackBar()" mat-button mat-raised-button>Submit</button>
-                  </mat-action-row>
-        
-            </mat-card-content>
-          </mat-card>
+    <div class="col-md-8 entry">
+      <p>&nbsp;</p>
+      <h1>Demo</h1>
     </div>
-  <!-- </div>
-  <div class="row"> -->
+  </div>
+  <div class="row">
     <div class="col-md-6">
-
-        <div>
-            <h2>Preview:</h2>
-
-            <anms-phone-shell *ngIf="channelGroup.controls.channel.value === 'Push Notification'">
-              <div style="background: url(/assets/ios-homescreen.jpg); background-size: 100%; width: 100%; height: 100%;"></div>
-            </anms-phone-shell>
-        
-        
-            <anms-phone-shell #activityFeedPreview *ngIf="channelGroup.controls.channel.value === 'Activity Feed'">
-              <mat-toolbar color="primary"></mat-toolbar>
-              <div style="overflow: hidden;">
-                <div style="height: 500px; overflow-y: scroll">
-                  <div>
-                      <mat-card class="example-card">
-                        <mat-card-header>
-                          <div mat-card-avatar class="example-header-image"></div>
-                          <mat-card-subtitle>{{ targetGroup.controls.target.value }}</mat-card-subtitle>
-                        </mat-card-header>
-                        <img style="margin: 0; width: 100%;" mat-card-image [src]="activityFeedInputGroup.controls.imageUrl.value | trustUrl" alt="">
-                          <mat-card-content>
-                          <h4>{{ activityFeedInputGroup.controls.headline.value }}</h4>
-                          <p>{{ activityFeedInputGroup.controls.description.value }}</p>
-                        </mat-card-content>
-                        <!-- <mat-card-actions>
-                          <button mat-button>LIKE</button>
-                          <button mat-button>SHARE</button>
-                        </mat-card-actions> -->
-                      </mat-card>
-                      <p>&nbsp;</p>
+      <mat-card>
+        <mat-card-content>
+            <mat-vertical-stepper linear>
+                <mat-step [stepControl]="channelGroup">
+                  <ng-template matStepLabel>Select a Channel<span>: <strong>{{ channelGroup.controls.channel.value }}</strong></span></ng-template>
+                  <div fxLayout="column" fxLayoutAlign="space-around start">
+                    <form [formGroup]="channelGroup">
+                      <mat-form-field>
+                        <mat-select formControlName="channel" placeholder="Channels">
+                          <mat-option value="Activity Feed">
+                            Activity Feed
+                          </mat-option>
+                          <mat-option value="Email">
+                            Email
+                          </mat-option>
+                          <mat-option value="Push Notification">
+                            Push Notification
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </form>
+                    <button color="accent" mat-button mat-raised-button matStepperNext>Next</button>
                   </div>
-                </div>
-              </div>
-            </anms-phone-shell>
-            
+                </mat-step>
+                <mat-step [stepControl]="targetGroup">
+                  <ng-template matStepLabel>Select a Target Audience<span>: <strong>{{ targetGroup.controls.target.value }}</strong></span></ng-template>
+                  <div fxLayout="column" fxLayoutAlign="space-around start">
+                    <form [formGroup]="targetGroup">
+                      <h3>Students:</h3>
+                      <mat-accordion>
+                          <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                              <mat-panel-title>
+                                By College
+                              </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <mat-radio-group class="example-radio-group" formControlName="target">
+                              <mat-radio-button *ngFor="let college of targets.colleges" [value]="college" class="example-radio-button">{{college}}</mat-radio-button>
+                            </mat-radio-group>
+                            <mat-action-row>
+                                <button color="accent" mat-button mat-raised-button matStepperNext>Next</button>
+                            </mat-action-row>
+                          </mat-expansion-panel>
+                          <mat-expansion-panel>
+                            <mat-expansion-panel-header>
+                              <mat-panel-title>
+                                By Major
+                              </mat-panel-title>
+                            </mat-expansion-panel-header>
+                            <p>I'm visible because I am open</p>
+                          </mat-expansion-panel>
+                        </mat-accordion>
+                      <h3>Employees:</h3>
+                    </form>
+                  </div>
+                </mat-step>
+                <mat-step label="Create Communication">
+                  
+                  <ckeditor *ngIf="channelGroup.controls.channel.value === 'Email'"
+                    [(ngModel)]="emailContent"
+                    [config]="{uiColor: '#a4a4a4'}"
+                    debounce="500">
+                  </ckeditor>
+          
+          
+                  <div *ngIf="channelGroup.controls.channel.value === 'Activity Feed'">
+                    <form [formGroup]="activityFeedInputGroup">
+                      <mat-form-field class="full-width">
+                        <input matInput formControlName="headline" placeholder="Headline">
+                      </mat-form-field>
+                    
+                      <mat-form-field class="full-width">
+                        <textarea matInput formControlName="description" placeholder="Description"></textarea>
+                      </mat-form-field>
+          
+                      <mat-form-field class="full-width">
+                        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field>
+          
+                      <mat-form-field class="full-width">
+                        <mat-select formControlName="mediaType" placeholder="Type">
+                          <mat-option value="Audio">
+                            Audio
+                          </mat-option>
+                          <mat-option value="Calendar Event">
+                            Calendar Event
+                          </mat-option>
+                          <mat-option value="Content Link">
+                            Content Link
+                          </mat-option>
+                          <mat-option value="Video">
+                            Video
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+          
+                      <mat-form-field class="full-width">
+                        <input matInput formControlName="linkUrl" placeholder="Link URL" type="url">
+                      </mat-form-field>
+          
+                      <mat-form-field class="full-width">
+                        <input matInput formControlName="imageUrl" placeholder="Image URL" type="url">
+                      </mat-form-field>
+          
+          
+                    </form>
+                  </div>
+          
+          
+                </mat-step>
+              </mat-vertical-stepper>
+    
+    
+              <mat-action-row>
+                  <button color="warn" routerLink="/features" (click)="openSnackBar()" mat-button mat-raised-button>Submit</button>
+              </mat-action-row>
+    
+        </mat-card-content>
+      </mat-card>
+      
+
+    </div>
+    <div class="offset-md-1  col-md-5">
+      
+      <div>
+        <h2>Preview:</h2>
+        <anms-phone-shell *ngIf="channelGroup.controls.channel.value === 'Push Notification'">
+          <div style="background: url(/assets/ios-homescreen.jpg); background-size: 100%; width: 100%; height: 100%;"></div>
+        </anms-phone-shell>
+    
+    
+        <anms-phone-shell *ngIf="channelGroup.controls.channel.value === 'Activity Feed'">
+          <anms-app-shell>
+            <mat-card class="example-card">
+              <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-subtitle>{{ targetGroup.controls.target.value }}</mat-card-subtitle>
+              </mat-card-header>
+              <img style="margin: 0; width: 100%;" mat-card-image [src]="activityFeedInputGroup.controls.imageUrl.value | trustUrl" alt="">
+                <mat-card-content>
+                <h4>{{ activityFeedInputGroup.controls.headline.value }}</h4>
+                <p>{{ activityFeedInputGroup.controls.description.value }}</p>
+              </mat-card-content>
+              <!-- <mat-card-actions>
+                <button mat-button>LIKE</button>
+                <button mat-button>SHARE</button>
+              </mat-card-actions> -->
+            </mat-card>
+            <p>&nbsp;</p>
+          </anms-app-shell>
+        </anms-phone-shell>
         
-        
-            <div #emailPreview *ngIf="channelGroup.controls.channel.value === 'Email'">
-              <table border="0" cellspacing="0" cellpadding="0" bgcolor="#F6F6F5" style="width: 100%;">
-                <tbody>
-                    <tr>
-                        <td align="center" valign="top">
-                            <!--Blue Header Logo-->
-                            <table border="0" width="640" cellspacing="0" cellpadding="0">
-                                <tbody>
-                                    <tr>
-                                        <td align="center" bgcolor="#0033a0" height="140"><a href="http://admissions.boisestate.edu/" target="_blank"><img id="top_logo" style="display: block; color: #ffffff; font-family: Arial; font-size: 20px;" src="https://d11lzdhqy8rqza.cloudfront.net/95499/1_logo_top.png" alt="Boise State University" width="237" height="140" border="0"></a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <!--MainText-->
-                            <table border="0" width="640" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
-                                <tbody>
-                                    <tr>
-                                        <td class="content" style="padding: 20px 40px; font-family: Arial; font-size: 16px; color: #464646; text-align: left;" valign="top">
-                                            <p>Dear {{'{'}}firstName{{'}'}},</p>
-                                            <p [innerHTML]="emailContent | trustHtml"></p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <!-- <table border="0" width="640" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
-                                <tbody>
-                                    <tr>
-                                        <td class="content" style="padding: 20px 40px; font-family: Arial; font-size: 16px; color: #464646; text-align: left; line-height:140%;" valign="top">
-                                            <p>
-                                                New Student Programs<br>
-                                                Boise State University<br>
-                                                (208) 426-1679<br>
-                                                <a href="mailto:orientationinfo@boisestate.edu">orientationinfo@boisestate.edu</a><br>
-                                                <a href="nsp.boisestate.edu">nsp.boisestate.edu</a>
-                                            </p>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table> -->
-                            <!--Footer-->
-                            <table border="0" width="640" cellspacing="0" cellpadding="0" bgcolor="#09347A">
-                                <tbody>
-                                    <!--Footer Logo-->
-                                    <tr>
-                                        <td align="center" bgcolor="#0033a0" style="padding: 20px 0;">
-                                            <a href="http://admissions.boisestate.edu/" target="_blank">
-                                                <img id="top_logo" style="display: block; color: #ffffff; font-family: Arial; font-size: 20px;" src="http://static.askadmissions.net/boisestate/UserMedia/2016%20Templates%20Assets/Logos/WhtTxtLogo.png" alt="Boise State University Logo" width="237" height="66" border="0">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <!--SocialIcons-->
-                                    <tr>
-                                        <td align="center" bgcolor="#0033a0" style="padding: 0px 0px 20px 0px;">
-                                            <!--FaceBook-->
-                                            <a href="https://www.facebook.com/groups/942702222434142/" target="_blank"><img src="https://static.askadmissions.net/boisestate/UserMedia/2016%20Templates%20Assets/Buttons/facebook.png" alt="Facebook" width="33" height="34" border="0"></a>&nbsp;&nbsp;&nbsp;
-                                            <!--Twitter-->
-                                            <a href="https://twitter.com/broncoventure" target="_blank"><img src="https://static.askadmissions.net/boisestate/UserMedia/2016%20Templates%20Assets/Buttons/twitter.png" alt="Twitter" width="33" height="34"></a>&nbsp;&nbsp;&nbsp;
-                                            <!--Instagram-->
-                                            <a href="https://www.instagram.com/boisestateorientation/" target="_blank">
-                                                <img src="https://static.askadmissions.net/boisestate/UserMedia/2016%20Templates%20Assets/Buttons/instagram.png" alt="Instagram" width="33" height="34">
-                                            </a>
-                                        </td>
-                                    </tr>
-                                    <!--Apply&VisitButtons-->
-                                    <tr></tr>
-                                </tbody>
-                            </table>
-                            <table border="0" width="640" cellspacing="0" cellpadding="0" bgcolor="#0033a0">
-                                <tbody>
-                                    <tr>
-                                        <td align="center" colspan="2" style="padding-top: 20px; padding-bottom: 20px;">
-                                            <span style="font-family: Arial; font-size: 11px; color: #ffffff;">
-                                                Copyright © 2017 Boise State University. All rights reserved.
-                                            </span>
-                                        </td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        
+    
+    
+        <div #emailPreview *ngIf="channelGroup.controls.channel.value === 'Email'">
+          <table border="0" cellspacing="0" cellpadding="0" bgcolor="#F6F6F5" style="width: 100%;">
+            <tbody>
+                <tr>
+                    <td align="center" valign="top">
+                        <!--Blue Header Logo-->
+                        <table border="0" width="640" cellspacing="0" cellpadding="0">
+                            <tbody>
+                                <tr>
+                                    <td align="center" bgcolor="#0033a0" height="140"><a href="http://admissions.boisestate.edu/" target="_blank"><img id="top_logo" style="display: block; color: #ffffff; font-family: Arial; font-size: 20px;" src="https://d11lzdhqy8rqza.cloudfront.net/95499/1_logo_top.png" alt="Boise State University" width="237" height="140" border="0"></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!--MainText-->
+                        <table border="0" width="640" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+                            <tbody>
+                                <tr>
+                                    <td class="content" style="padding: 20px 40px; font-family: Arial; font-size: 16px; color: #464646; text-align: left;" valign="top">
+                                        <p>Dear {{'{'}}firstName{{'}'}},</p>
+                                        <p [innerHTML]="emailContent | trustHtml"></p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <!-- <table border="0" width="640" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+                            <tbody>
+                                <tr>
+                                    <td class="content" style="padding: 20px 40px; font-family: Arial; font-size: 16px; color: #464646; text-align: left; line-height:140%;" valign="top">
+                                        <p>
+                                            New Student Programs<br>
+                                            Boise State University<br>
+                                            (208) 426-1679<br>
+                                            <a href="mailto:orientationinfo@boisestate.edu">orientationinfo@boisestate.edu</a><br>
+                                            <a href="nsp.boisestate.edu">nsp.boisestate.edu</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table> -->
+                        <!--Footer-->
+                        <table border="0" width="640" cellspacing="0" cellpadding="0" bgcolor="#09347A">
+                            <tbody>
+                                <!--Footer Logo-->
+                                <tr>
+                                    <td align="center" bgcolor="#0033a0" style="padding: 20px 0;">
+                                        <a href="http://admissions.boisestate.edu/" target="_blank">
+                                            <img id="top_logo" style="display: block; color: #ffffff; font-family: Arial; font-size: 20px;" src="http://static.askadmissions.net/boisestate/UserMedia/2016%20Templates%20Assets/Logos/WhtTxtLogo.png" alt="Boise State University Logo" width="237" height="66" border="0">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <!--SocialIcons-->
+                                <tr>
+                                    <td align="center" bgcolor="#0033a0" style="padding: 0px 0px 20px 0px;">
+                                        <!--FaceBook-->
+                                        <a href="https://www.facebook.com/groups/942702222434142/" target="_blank"><img src="https://static.askadmissions.net/boisestate/UserMedia/2016%20Templates%20Assets/Buttons/facebook.png" alt="Facebook" width="33" height="34" border="0"></a>&nbsp;&nbsp;&nbsp;
+                                        <!--Twitter-->
+                                        <a href="https://twitter.com/broncoventure" target="_blank"><img src="https://static.askadmissions.net/boisestate/UserMedia/2016%20Templates%20Assets/Buttons/twitter.png" alt="Twitter" width="33" height="34"></a>&nbsp;&nbsp;&nbsp;
+                                        <!--Instagram-->
+                                        <a href="https://www.instagram.com/boisestateorientation/" target="_blank">
+                                            <img src="https://static.askadmissions.net/boisestate/UserMedia/2016%20Templates%20Assets/Buttons/instagram.png" alt="Instagram" width="33" height="34">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <!--Apply&VisitButtons-->
+                                <tr></tr>
+                            </tbody>
+                        </table>
+                        <table border="0" width="640" cellspacing="0" cellpadding="0" bgcolor="#0033a0">
+                            <tbody>
+                                <tr>
+                                    <td align="center" colspan="2" style="padding-top: 20px; padding-bottom: 20px;">
+                                        <span style="font-family: Arial; font-size: 11px; color: #ffffff;">
+                                            Copyright © 2017 Boise State University. All rights reserved.
+                                        </span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    
+
+
 
 
 
 
     </div>
   </div>
+
 </div>
-  
-  
