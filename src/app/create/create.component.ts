@@ -12,6 +12,7 @@ export class CreateComponent implements OnInit {
   activityFeedInputGroup: FormGroup;
   channelGroup: FormGroup;
   targetGroup: FormGroup;
+  pushNotificationInputGroup: FormGroup;
   emailContent = '';
 
   targets = {
@@ -47,11 +48,11 @@ export class CreateComponent implements OnInit {
       imageUrl: ['https://news.boisestate.edu/update/files/2017/01/EngineeringScienceRobot620x320-500x258.jpg'],
       linkUrl: ['']
     });
-  }
 
-  openSnackBar() {
-    this.snackBar.open('Success. Now you can view basic analytics about your communications.', 'Okay');
+    this.pushNotificationInputGroup = this.fb.group({
+      title: ['Final Grade', Validators.required],
+      message: ['Your final grade for ETHNO 597 is now available.', Validators.required],
+    });
   }
-
 
 }

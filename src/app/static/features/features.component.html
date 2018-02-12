@@ -1,20 +1,18 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h1 class="main-heading">Features</h1>
+      <!-- <h1 class="main-heading">Features</h1> -->
     </div>
   </div>
   <div class="row align-items-end">
-    <div  class="col-md-6 col-lg-4" [ngClass]="animateOnRouteEnter">
-      <mat-card>
-        <mat-card-title><code>{{versions.angular}}</code>Angular</mat-card-title>
+    <div *ngFor="let card of cards" class="col-md-6 col-lg-4" [ngClass]="animateOnRouteEnter">
+      <mat-card routerLink="/detail">
+        <mat-card-title>{{ card.title }}</mat-card-title>
+        <img mat-card-image [src]="card.imageUrl">
         <mat-card-subtitle>
-          Modern powerful framework
+          {{ card.summary }}          
         </mat-card-subtitle>
         <mat-card-actions>
-          <a mat-button href="https://angular.io/docs/ts/latest/" target="_blank">
-            <i class="fa fa-book fa-lg"></i> Docs
-          </a>
           <a mat-button href="https://github.com/angular/angular" target="_blank">
             <i class="fa fa-github fa-lg"></i> Github
           </a>
@@ -23,14 +21,11 @@
     </div>
     <div  class="col-md-6 col-lg-4" [ngClass]="animateOnRouteEnter">
       <mat-card>
-        <mat-card-title><code>{{versions.material}}</code>Angular Material</mat-card-title>
+        <mat-card-title>Boise State Unveils New School of the Arts</mat-card-title>
         <mat-card-subtitle>
-          Material design component library
+            Debuting this fall, the new school encompasses music, art, creative writing and theatre arts.
         </mat-card-subtitle>
         <mat-card-actions>
-          <a mat-button href="https://material.angular.io/" target="_blank">
-            <i class="fa fa-book fa-lg"></i> Docs
-          </a>
           <a mat-button href="https://github.com/angular/material2/" target="_blank">
             <i class="fa fa-github fa-lg"></i> Github
           </a>
@@ -39,9 +34,9 @@
     </div>
     <div  class="col-md-6 col-lg-4" [ngClass]="animateOnRouteEnter">
       <mat-card>
-        <mat-card-title><code>{{versions.angularCli}}</code>Angular Cli</mat-card-title>
+        <mat-card-title>Hermida, Coleman Lead The Way In Win</mat-card-title>
         <mat-card-subtitle>
-          Responsive layout from battle tested, world most famous UI library
+            Marta Hermida (26 points), A'Shanti Coleman (15) have career nights in 91-85 win over New Mexico
         </mat-card-subtitle>
         <mat-card-actions>
           <a mat-button href="https://github.com/angular/angular-cli/wiki/generate" target="_blank">

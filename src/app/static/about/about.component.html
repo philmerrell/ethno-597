@@ -2,36 +2,19 @@
   <div class="gradient">
     <div class="container">
       <!-- <h1>ETHNO 597 Project</h1> -->
-      <div class="actions">
-        <a [ngClass]="animateOnRouteEnter"
-           mat-raised-button color="primary" routerLink="../features">
-          Check Features
-        </a>
-        <a mat-raised-button color="accent" routerLink="../examples"
-           [ngClass]="animateOnRouteEnter">
-          Check Examples
-        </a>
-        <a mat-raised-button routerLink="../settings"
-           [ngClass]="animateOnRouteEnter">
-          Change Theme
-        </a>
-        <span [ngClass]="animateOnRouteEnter">or</span>
-        <a mat-raised-button
-           [ngClass]="animateOnRouteEnter"
-           target="_blank"
-           href="https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1">
-          <i class="fa fa-medium"></i> Check Blog Post
-        </a>
-      </div>
       <mat-card [ngClass]="animateOnRouteEnter" class="get-started">
         <mat-card-content>
           <h2>About</h2>
           <p>
-            This application is the result of a design ethnography course at Boise State University
-            <small><em>(ETHNO 597: Fundamentals of Design Ethnography)</em></small>. It explores ideas 
-            and potential solutions through proof of concept demos allowing administrators to send targeted 
-            communications to students through an application on their mobile device. The methods used to design these 
-            high-fidelity mock-ups were customer journey mapping, empathy maps, and stakeholder interviews.
+            This application explores potential solutions through proof of concept demos allowing administrators 
+            to send targeted communications to students through an application on their mobile device. This would allow various 
+            administrative stakeholders (instructors, chairs, Deans, etc) to engage with students when it matters 
+            most–their phone.
+            </p>
+          <p>
+            The work represented here is the result of a design ethnography course at Boise State University
+           <small><em>(ETHNO 597: Fundamentals of Design Ethnography)</em></small>. The methods used to 
+            design these high-fidelity mock-ups were customer journey mapping, empathy maps, and stakeholder interviews.
           </p>
           <h3>Interviews:</h3>
           <h3>Design Persona:</h3>
@@ -40,6 +23,29 @@
           <p>
             This customer journey contains a  
           </p>
+          <h3>Affinity Mapping:</h3>
+          <p>Lead the exercise to brainstorm who would use this tool and what content they would like to send through it.</p>
+          <div class="actions">
+            <a [ngClass]="animateOnRouteEnter"
+                mat-raised-button color="primary" routerLink="../features">
+              Check Features
+            </a>
+            <a mat-raised-button color="accent" routerLink="../examples"
+                [ngClass]="animateOnRouteEnter">
+              Check Examples
+            </a>
+            <a mat-raised-button routerLink="../settings"
+                [ngClass]="animateOnRouteEnter">
+              Change Theme
+            </a>
+            <span [ngClass]="animateOnRouteEnter">or</span>
+            <a mat-raised-button
+                [ngClass]="animateOnRouteEnter"
+                target="_blank"
+                href="https://medium.com/@tomastrajan/the-complete-guide-to-angular-material-themes-4d165a9d24d1">
+              <i class="fa fa-medium"></i> Check Blog Post
+            </a>
+          </div>
         </mat-card-content>
       </mat-card>
       <!-- <div class="get-started" [ngClass]="animateOnRouteEnter">
