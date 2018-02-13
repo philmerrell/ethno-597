@@ -5,6 +5,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --open",
+    "deploy": "ng build --prod --base-href \"/ethno-597/\" && angular-cli-ghpages",
     "build": "ng build",
     "test": "npm run lint && ng test --single-run",
     "lint": "ng lint",
