@@ -165,7 +165,7 @@
     
     
         <anms-phone-shell *ngIf="channelGroup.controls.channel.value === 'Activity Feed'">
-          <anms-app-shell>
+          <anms-app-shell *ngIf="targetGroup.controls.target.value">
             <mat-card class="example-card">
               <mat-card-header>
                 <div mat-card-avatar class="example-header-image"></div>

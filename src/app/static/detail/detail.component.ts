@@ -10,24 +10,11 @@ import { Chart } from 'chart.js';
 export class DetailComponent implements OnInit {
 
   activityFeedInputGroup: FormGroup;
-  chart = [];
-  data = {
-    datasets: [{
-        data: [10, 20, 30]
-    }],
+  doughnutChartLabels: string[] = ['Click', 'No Click'];
+  doughnutChartData: number[] = [350, 450];
+  doughnutChartType = 'pie';
 
-    // These labels appear in the legend and in the tooltips when hovering different arcs
-    labels: [
-        'Red',
-        'Yellow',
-        'Blue'
-    ]
-};
-
-
-  constructor(private fb: FormBuilder) { }
-
-  ngOnInit() {
+  constructor(private fb: FormBuilder) {
     this.activityFeedInputGroup = this.fb.group({
       headline: ['Annual Engineering and Science Festival is Feb. 3', Validators.required],
       description: ['All events are free and the festival is being held as an open house; ' +
@@ -36,11 +23,19 @@ export class DetailComponent implements OnInit {
       imageUrl: ['https://news.boisestate.edu/update/files/2017/01/EngineeringScienceRobot620x320-500x258.jpg'],
       linkUrl: ['']
     });
+   }
 
-    const pieChart = new Chart('canvas', {
-      type: 'pie',
-      data: this.data
-  });
+  ngOnInit() {
+
+  }
+
+  // events
+  public chartClicked(e: any): void {
+    console.log(e);
+  }
+
+  public chartHovered(e: any): void {
+    console.log(e);
   }
 
 }
