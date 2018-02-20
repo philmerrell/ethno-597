@@ -33,6 +33,7 @@ import { TrustUrlPipe } from '@app/shared/pipes/trust-url.pipe';
 import { PhoneShellComponent } from './phone-shell/phone-shell.component';
 import { ActivityFeedCardComponent } from './activity-feed-card/activity-feed-card.component';
 import { AppShellComponent } from './app-shell/app-shell.component';
+import { HomeScreenShellComponent } from './home-screen-shell/home-screen-shell.component';
 
 @NgModule({
   imports: [
@@ -70,7 +71,8 @@ import { AppShellComponent } from './app-shell/app-shell.component';
     TrustHtmlPipe, TrustUrlPipe,
     PhoneShellComponent,
     ActivityFeedCardComponent,
-    AppShellComponent
+    AppShellComponent,
+    HomeScreenShellComponent
   ],
   exports: [
     CommonModule,
@@ -104,7 +106,8 @@ import { AppShellComponent } from './app-shell/app-shell.component';
     TrustHtmlPipe, TrustUrlPipe,
     PhoneShellComponent,
     AppShellComponent,
-    ActivityFeedCardComponent
+    ActivityFeedCardComponent,
+    HomeScreenShellComponent
   ]
 })
 export class SharedModule { }

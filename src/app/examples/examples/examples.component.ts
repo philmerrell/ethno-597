@@ -11,8 +11,9 @@ import { routerTransition } from '@app/core';
 export class ExamplesComponent implements OnInit {
   examples = [
     { link: 'activity-feed', label: 'Activity Feed' },
-    { link: 'stock-market', label: 'Push Notification' },
-    { link: 'theming', label: 'Email' }
+    { link: 'push-notifications', label: 'Push Notification' },
+    { link: 'email', label: 'Email' },
+    { link: 'sms', label: 'SMS' }
   ];
 
   constructor() {}

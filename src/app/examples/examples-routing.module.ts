@@ -5,6 +5,9 @@ import { ExamplesComponent } from './examples/examples.component';
 import { StockMarketComponent } from './stock-market/stock-market.component';
 import { ParentComponent } from './theming/parent/parent.component';
 import { ActivityFeedComponent } from '@app/examples/activity-feed/activity-feed.component';
+import { PushNotificationsComponent } from '@app/examples/push-notifications/push-notifications.component';
+import { SmsComponent } from '@app/examples/sms/sms.component';
+import { EmailComponent } from '@app/examples/email/email.component';
 
 const routes: Routes = [
   {
@@ -24,17 +27,24 @@ const routes: Routes = [
         }
       },
       {
-        path: 'stock-market',
-        component: StockMarketComponent,
+        path: 'push-notifications',
+        component: PushNotificationsComponent,
         data: {
           title: 'Example: Push Notification'
         }
       },
       {
-        path: 'theming',
-        component: ParentComponent,
+        path: 'email',
+        component: EmailComponent,
         data: {
           title: 'Example: Email'
+        }
+      },
+      {
+        path: 'sms',
+        component: SmsComponent,
+        data: {
+          title: 'Example: SMS'
         }
       }
     ]

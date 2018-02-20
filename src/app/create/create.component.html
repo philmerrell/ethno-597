@@ -151,16 +151,13 @@
       <div>
         <h2>Preview:</h2>
         <anms-phone-shell *ngIf="channelGroup.controls.channel.value === 'Push Notification'">
-          <div style="border-radius: 10px; z-index: 999; width: 95%; padding: 10px; margin: 10px; position: absolute; background: rgba(255,255,255,0.95); top: 5; left: 10; right: 10;">
-            <p style="margin-bottom: 0;">
+          <anms-home-screen-shell>
+            <p class="notification" style="margin-bottom: 0;">
               <img src="assets/nav-logo.png" style="float: left; height: 15px;"><span style="font-size: .9em;">&nbsp;&nbsp;&nbsp;BOISE STATE</span><span style="float: right">now</span><br>
               <strong>{{ pushNotificationInputGroup.controls.title.value }}</strong><br>
               {{ pushNotificationInputGroup.controls.message.value }}
             </p>
-            <!-- <p>Your final grade for ETHNO 597 is posted.</p> -->
-          </div>
-
-          <div style="background: url(assets/ios-homescreen.jpg); background-size: 100%; position: absolute; bottom: 0; top: 0; left: 0; right: 0;"></div>
+          </anms-home-screen-shell>
         </anms-phone-shell>
     
     
