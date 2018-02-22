@@ -19,6 +19,7 @@ import { PhoneShellComponent } from '@app/shared/phone-shell/phone-shell.compone
 import { PushNotificationsComponent } from './push-notifications/push-notifications.component';
 import { SmsComponent } from './sms/sms.component';
 import { EmailComponent } from './email/email.component';
+import { StockMarketComponent } from '@app/examples/stock-market/stock-market.component';
 
 
 @NgModule({
@@ -37,6 +38,7 @@ import { EmailComponent } from './email/email.component';
     ParentComponent,
     ChildComponent,
     ActivityFeedComponent,
+    StockMarketComponent,
     PushNotificationsComponent,
     SmsComponent,
     EmailComponent

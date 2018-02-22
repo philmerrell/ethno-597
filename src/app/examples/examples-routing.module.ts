@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { ExamplesComponent } from './examples/examples.component';
-import { StockMarketComponent } from './stock-market/stock-market.component';
+// import { StockMarketComponent } from './stock-market/stock-market.component';
 import { ParentComponent } from './theming/parent/parent.component';
 import { ActivityFeedComponent } from '@app/examples/activity-feed/activity-feed.component';
 import { PushNotificationsComponent } from '@app/examples/push-notifications/push-notifications.component';
