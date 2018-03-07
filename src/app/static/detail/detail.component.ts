@@ -10,8 +10,8 @@ import { Chart } from 'chart.js';
 export class DetailComponent implements OnInit {
 
   activityFeedInputGroup: FormGroup;
-  doughnutChartLabels: string[] = ['Click', 'No Click'];
-  doughnutChartData: number[] = [350, 450];
+  doughnutChartLabels: string[] = ['Engagement', 'Impressions'];
+  doughnutChartData: number[] = [1000, 2000];
   doughnutChartType = 'pie';
 
   constructor(private fb: FormBuilder) {
