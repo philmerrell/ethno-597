@@ -31,14 +31,32 @@
                         </mat-select>
                       </mat-form-field>
                     </form>
-                    <button color="accent" mat-button mat-raised-button matStepperNext>Next</button>
+                    <button color="accent" mat-button mat-raised-button matStepperNext>Next Step <i class="fa fa-arrow-right"></i></button>
                   </div>
                 </mat-step>
-                <mat-step [stepControl]="targetGroup">
-                  <ng-template matStepLabel>Select a Target Audience<span>: <strong>{{ targetGroup.controls.target.value }}</strong></span></ng-template>
+                <mat-step [stepControl]="topicInputGroup">
+                  <ng-template matStepLabel>Create a Topic<span>: <strong>{{ topicInputGroup.controls.name.value }}</strong></span></ng-template>
                   <div fxLayout="column" fxLayoutAlign="space-around start">
-                    <form [formGroup]="targetGroup">
-                      <h3>Students:</h3>
+
+
+                      <form [formGroup]="topicInputGroup">
+                        <mat-form-field class="full-width">
+                          <input matInput formControlName="name" placeholder="Topic name">
+                        </mat-form-field>
+                      </form>
+                      <span style="font-size: 0.8em; color: #666;">Choose a source:</span><br>
+                      <mat-action-row>
+                          <button mat-button mat-raised-button color="primary">Upload CSV</button>
+                          <button mat-button mat-raised-button color="primary">Boomi Integration</button>
+                      </mat-action-row>
+                      <p>&nbsp;</p>
+                      <mat-action-row>
+                        <button color="accent" mat-button mat-raised-button matStepperNext>Next Step <i class="fa fa-arrow-right"></i></button>
+                      </mat-action-row>
+
+
+                    <!-- <form [formGroup]="targetGroup">
+                     <h3>Students:</h3>
                       <mat-accordion>
                           <mat-expansion-panel>
                             <mat-expansion-panel-header>
@@ -63,7 +81,7 @@
                           </mat-expansion-panel>
                         </mat-accordion>
                       <h3>Employees:</h3>
-                    </form>
+                    </form> -->
                   </div>
                 </mat-step>
                 <mat-step label="Create Communication">
@@ -177,11 +195,11 @@
     
     
         <anms-phone-shell *ngIf="channelGroup.controls.channel.value === 'Activity Feed'">
-          <anms-app-shell *ngIf="targetGroup.controls.target.value">
+          <anms-app-shell *ngIf="topicInputGroup.controls.name.value">
             <mat-card class="example-card">
               <mat-card-header>
                 <div mat-card-avatar class="example-header-image"></div>
-                <mat-card-subtitle>{{ targetGroup.controls.target.value }}</mat-card-subtitle>
+                <mat-card-subtitle>{{ topicInputGroup.controls.name.value }}</mat-card-subtitle>
               </mat-card-header>
               <img style="margin: 0; width: 100%;" mat-card-image [src]="activityFeedInputGroup.controls.imageUrl.value | trustUrl" alt="">
                 <mat-card-content>

@@ -12,6 +12,7 @@ export class CreateComponent implements OnInit {
   activityFeedInputGroup: FormGroup;
   channelGroup: FormGroup;
   targetGroup: FormGroup;
+  topicInputGroup: FormGroup;
   pushNotificationInputGroup: FormGroup;
   emailContent = '';
 
@@ -38,6 +39,10 @@ export class CreateComponent implements OnInit {
 
     this.targetGroup = this.fb.group({
       target: ['', Validators.required]
+    });
+
+    this.topicInputGroup = this.fb.group({
+      name: ['', Validators.required]
     });
 
     this.activityFeedInputGroup = this.fb.group({
