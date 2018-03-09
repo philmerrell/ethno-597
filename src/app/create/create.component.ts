@@ -13,6 +13,7 @@ export class CreateComponent implements OnInit {
   channelGroup: FormGroup;
   targetGroup: FormGroup;
   topicInputGroup: FormGroup;
+  smsInputGroup: FormGroup;
   pushNotificationInputGroup: FormGroup;
   emailContent = '';
 
@@ -43,6 +44,10 @@ export class CreateComponent implements OnInit {
 
     this.topicInputGroup = this.fb.group({
       name: ['', Validators.required]
+    });
+
+    this.smsInputGroup = this.fb.group({
+      message: ['', Validators.required]
     });
 
     this.activityFeedInputGroup = this.fb.group({
