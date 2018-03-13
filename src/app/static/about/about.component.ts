@@ -3,6 +3,8 @@ import { Component, OnInit } from '@angular/core';
 import { ANIMATE_ON_ROUTE_ENTER } from '@app/core';
 import { MatDialog } from '@angular/material/dialog';
 import { CustomerJourneyMapComponent } from '@app/static/customer-journey-map/customer-journey-map.component';
+import { InnovationVennDiagramComponent } from '@app/static/innovation-venn-diagram/innovation-venn-diagram.component';
+import { PersonasComponent } from '@app/static/personas/personas.component';
 
 @Component({
   selector: 'anms-about',
@@ -20,6 +22,17 @@ export class AboutComponent implements OnInit {
     const dialogRef = this.dialog.open(CustomerJourneyMapComponent, {
       width: '800px'
     });
+  }
 
+  openInnovationVennDiagram(): void {
+    const dialogRef = this.dialog.open(InnovationVennDiagramComponent, {
+      width: '800px'
+    });
+  }
+
+  openPersonas(): void {
+    const dialogRef = this.dialog.open(PersonasComponent, {
+      width: '800px'
+    });
   }
 }
