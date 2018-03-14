@@ -14,12 +14,25 @@
           <p>
             As an institution how do we know we are on the right path to building innovative tools?
           </p>
-          <p>
+          <div class="actions">
             <a [ngClass]="animateOnRouteEnter"
               mat-raised-button color="primary" (click)="openInnovationVennDiagram()">
               <i class="fa fa-bullseye"></i> Innovation Sweet Spot
             </a>
-          </p>
+          </div>
+          <h4>Desirability</h4>
+          <div class="actions">
+            <a [ngClass]="animateOnRouteEnter"
+              mat-raised-button color="primary" (click)="openPersonas()">
+              <i class="fa fa-id-card"></i> Personas
+            </a>
+            <a [ngClass]="animateOnRouteEnter"
+              mat-raised-button color="primary" (click)="openCustomerJourneyMap()">
+              <i class="fa fa-map"></i> Customer Journey Map
+            </a>
+          </div>
+          <h4>Feasibility</h4>
+          <h4>Viability</h4>
         </mat-card-content>
       </mat-card>
       <mat-card [ngClass]="animateOnRouteEnter" class="get-started">
@@ -68,14 +81,8 @@
           <p>
           </p>
           <div class="actions">
-            <a [ngClass]="animateOnRouteEnter"
-                mat-raised-button color="primary" (click)="openCustomerJourneyMap()">
-                <i class="fa fa-map"></i> Customer Journey Map
-            </a>
-            <a [ngClass]="animateOnRouteEnter"
-                mat-raised-button color="primary" (click)="openPersonas()">
-                <i class="fa fa-id-card"></i> Personas
-            </a>
+            
+            
             <a [ngClass]="animateOnRouteEnter"
                 mat-raised-button color="primary" routerLink="../examples">
               Check Examples
