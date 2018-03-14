@@ -1,14 +1,29 @@
 <div class="background">
   <div class="gradient">
     <div class="container">
-      <h1>Tracking Student Engagement Through Mobile Device Channels</h1>
+      <h1>DESIGN BRIEF:</h1>
+      <h2>Tracking Student Engagement Through Mobile Device Channels</h2>
       <mat-card [ngClass]="animateOnRouteEnter" class="get-started">
+        <mat-card-title><b>Premise</b></mat-card-title>
         <mat-card-content>
           <p>
-            <b>Premise:</b> Boise State is missing an opportunity to better engage with students where it matters 
+            Boise State is missing an opportunity to better engage with students where it matters 
             most–their mobile device. As an institution we are not taking full advantage of the mobile platform. 
-            We do not possess a unified mobile strategy for student engagement.
+            We do not possess tools that can help us form a unified mobile strategy for student engagement.
           </p>
+          <p>
+            As an institution how do we know we are on the right path to building innovative tools?
+          </p>
+          <p>
+            <a [ngClass]="animateOnRouteEnter"
+              mat-raised-button color="primary" (click)="openInnovationVennDiagram()">
+              <i class="fa fa-bullseye"></i> Innovation Sweet Spot
+            </a>
+          </p>
+        </mat-card-content>
+      </mat-card>
+      <mat-card [ngClass]="animateOnRouteEnter" class="get-started">
+        <mat-card-content>
           <p>
             There are four primary channels to engage students with on a mobile device. They are: <code>Push Notifications</code>, 
             <code>SMS</code>, <code>Email</code>, and what we are calling the <code>Newsfeed</code>. Each channel carries norms 
@@ -56,6 +71,10 @@
             <a [ngClass]="animateOnRouteEnter"
                 mat-raised-button color="primary" (click)="openCustomerJourneyMap()">
                 <i class="fa fa-map"></i> Customer Journey Map
+            </a>
+            <a [ngClass]="animateOnRouteEnter"
+                mat-raised-button color="primary" (click)="openPersonas()">
+                <i class="fa fa-id-card"></i> Personas
             </a>
             <a [ngClass]="animateOnRouteEnter"
                 mat-raised-button color="primary" routerLink="../examples">

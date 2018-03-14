@@ -34,6 +34,7 @@ import { PhoneShellComponent } from './phone-shell/phone-shell.component';
 import { ActivityFeedCardComponent } from './activity-feed-card/activity-feed-card.component';
 import { AppShellComponent } from './app-shell/app-shell.component';
 import { HomeScreenShellComponent } from './home-screen-shell/home-screen-shell.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   imports: [
@@ -45,6 +46,7 @@ import { HomeScreenShellComponent } from './home-screen-shell/home-screen-shell.
 
 
     MatButtonModule,
+    MatDialogModule,
     MatToolbarModule,
     MatSelectModule,
     MatTabsModule,
@@ -81,6 +83,7 @@ import { HomeScreenShellComponent } from './home-screen-shell/home-screen-shell.
     CKEditorModule,
 
     MatButtonModule,
+    MatDialogModule,
     MatMenuModule,
     MatTabsModule,
     MatChipsModule,
