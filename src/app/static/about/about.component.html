@@ -12,8 +12,29 @@
             We do not possess tools that can help us form a unified mobile strategy for student engagement.
           </p>
           <p>
-            As an institution how do we know we are on the right path to building innovative tools?
+            How do we go about solving this? As an institution how do we know we are on the right path to building useful and innovative tools?
           </p>
+          <p>&nbsp;</p>
+          <h3>A Framework for Design</h3>
+          <div style="float: left; padding: 10px; background: #eee; margin: 10px;">
+            <img src="assets/papanek.jpg" width="200"><br>
+            <span>A pretty cool dude.</span>
+          </div>
+          <div style="padding: 10px;">
+            <b>Victor Papanek</b><br>
+            <aside class="pquote">
+                <blockquote>
+                    <p>
+                        "Design must be an innovative, highly creative, cross-disciplinary tool responsive 
+                        to the needs of [people]. It must be more research-oriented, and we must stop defiling 
+                        the earth itself with poorly-designed objects and structures." 
+                    </p>
+                </blockquote>
+            </aside>
+            <p>Papanek is one of the grandfathers of design thinking, which is an iterative framework for crafting 
+              solutions to problems. He introduced the idea of cross-disciplinary design teams and was emphasized 
+              the importance of the iterative cycle of design. </p>
+          </div>
           <div class="actions">
             <a [ngClass]="animateOnRouteEnter"
               mat-raised-button color="primary" (click)="openInnovationVennDiagram()">
@@ -26,23 +47,25 @@
               mat-raised-button color="primary" (click)="openPersonas()">
               <i class="fa fa-id-card"></i> Personas
             </a>
-            <a [ngClass]="animateOnRouteEnter"
-              mat-raised-button color="primary" (click)="openCustomerJourneyMap()">
-              <i class="fa fa-map"></i> Customer Journey Map
-            </a>
           </div>
           <h4>Feasibility</h4>
           <h4>Viability</h4>
-        </mat-card-content>
-      </mat-card>
-      <mat-card [ngClass]="animateOnRouteEnter" class="get-started">
-        <mat-card-content>
           <p>
             There are four primary channels to engage students with on a mobile device. They are: <code>Push Notifications</code>, 
             <code>SMS</code>, <code>Email</code>, and what we are calling the <code>Newsfeed</code>. Each channel carries norms 
             for what kind of messaging is deemed appropriate. Different levels of relevance and priority can dictate the most 
             appropriate channel to send messages through.
           </p>
+          <div class="actions">
+            <a [ngClass]="animateOnRouteEnter"
+              mat-raised-button color="primary" (click)="openCustomerJourneyMap()">
+              <i class="fa fa-map"></i> Customer Journey Map
+            </a>
+          </div>
+        </mat-card-content>
+      </mat-card>
+      <mat-card [ngClass]="animateOnRouteEnter" class="get-started">
+        <mat-card-content>
           <p>
             The first phase of this study will be primarily concerned with interviewing stakeholders at Boise State and will explore four primary questions:
           </p>
