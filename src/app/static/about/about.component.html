@@ -1,6 +1,9 @@
 <div class="background">
   <div class="gradient">
     <div class="container">
+      <button mat-button mat-raised-button [anmsLoadingState]="loading" (click)="testLoading()">
+        Load Me
+      </button>
       <h1>DESIGN BRIEF:</h1>
       <h2>Tracking Student Engagement Through Mobile Device Channels</h2>
       <mat-card [ngClass]="animateOnRouteEnter" class="get-started">
@@ -16,6 +19,7 @@
           </p>
           <p>&nbsp;</p>
           <h3>A Framework for Design</h3>
+          <p>Design ethnography ... design thinking ...</p>
           <div style="float: left; padding: 10px; background: #eee; margin: 10px;">
             <img src="assets/papanek.jpg" width="200"><br>
             <span>A pretty cool dude.</span>

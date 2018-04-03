@@ -47,7 +47,7 @@
                       <span style="font-size: 0.8em; color: #666;">Choose a source for target audience:</span><br>
                       <mat-action-row>
                           <button mat-button mat-raised-button color="primary">Upload CSV</button>
-                          <button mat-button mat-raised-button color="primary">Boomi Integration</button>
+                          <button (click)="openBoomiFilterDialog()" mat-button mat-raised-button color="primary">Boomi Integration</button>
                       </mat-action-row>
                       <p>&nbsp;</p>
                       <mat-action-row>
@@ -55,33 +55,7 @@
                       </mat-action-row>
 
 
-                    <!-- <form [formGroup]="targetGroup">
-                     <h3>Students:</h3>
-                      <mat-accordion>
-                          <mat-expansion-panel>
-                            <mat-expansion-panel-header>
-                              <mat-panel-title>
-                                By College
-                              </mat-panel-title>
-                            </mat-expansion-panel-header>
-                            <mat-radio-group class="example-radio-group" formControlName="target">
-                              <mat-radio-button *ngFor="let college of targets.colleges" [value]="college" class="example-radio-button">{{college}}</mat-radio-button>
-                            </mat-radio-group>
-                            <mat-action-row>
-                                <button color="accent" mat-button mat-raised-button matStepperNext>Next</button>
-                            </mat-action-row>
-                          </mat-expansion-panel>
-                          <mat-expansion-panel>
-                            <mat-expansion-panel-header>
-                              <mat-panel-title>
-                                By Major
-                              </mat-panel-title>
-                            </mat-expansion-panel-header>
-                            <p>I'm visible because I am open</p>
-                          </mat-expansion-panel>
-                        </mat-accordion>
-                      <h3>Employees:</h3>
-                    </form> -->
+                    
                   </div>
                 </mat-step>
                 <mat-step label="Create Communication">

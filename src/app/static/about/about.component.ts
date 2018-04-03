@@ -13,6 +13,7 @@ import { PersonasComponent } from '@app/static/personas/personas.component';
 })
 export class AboutComponent implements OnInit {
   animateOnRouteEnter = ANIMATE_ON_ROUTE_ENTER;
+  loading = false;
 
   constructor(private dialog: MatDialog) {}
 
@@ -34,5 +35,12 @@ export class AboutComponent implements OnInit {
     const dialogRef = this.dialog.open(PersonasComponent, {
       width: '800px'
     });
+  }
+
+  testLoading() {
+    this.loading = true;
+    setTimeout(() => {
+      this.loading = false;
+    }, 3000);
   }
 }

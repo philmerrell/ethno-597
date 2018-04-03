@@ -29,7 +29,7 @@ import { CreateComponent } from './create/create.component';
     // app
     AppRoutingModule
   ],
-  declarations: [AppComponent, CreateComponent],
+  declarations: [AppComponent, CreateComponent ],
   providers: [],
   bootstrap: [AppComponent]
 })

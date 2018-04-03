@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { BoomiFilterDialogComponent } from '@app/shared/boomi-filter-dialog/boomi-filter-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'anms-create',
@@ -11,18 +13,12 @@ export class CreateComponent implements OnInit {
 
   activityFeedInputGroup: FormGroup;
   channelGroup: FormGroup;
-  targetGroup: FormGroup;
   topicInputGroup: FormGroup;
   smsInputGroup: FormGroup;
   pushNotificationInputGroup: FormGroup;
   emailContent = '';
 
-  targets = {
-    colleges: [ 'College of Arts and Sciences', 'College of Engineering', 'College of Business and Economics' ],
-    majors: ['Computer Science', 'Communication', 'Business', 'Spanish', 'Anthropology'],
-    residence: ['On Campus', 'Off Campus'],
-    employees: ['Faculty', 'Staff'],
-  };
+
 
   seasons = [
     'Winter',
@@ -31,16 +27,14 @@ export class CreateComponent implements OnInit {
     'Autumn',
   ];
 
-  constructor(private fb: FormBuilder, private snackBar: MatSnackBar) { }
+  constructor(private fb: FormBuilder, private snackBar: MatSnackBar, private dialog: MatDialog) { }
 
   ngOnInit() {
     this.channelGroup = this.fb.group({
       channel: ['', Validators.required]
     });
 
-    this.targetGroup = this.fb.group({
-      target: ['', Validators.required]
-    });
+
 
     this.topicInputGroup = this.fb.group({
       name: ['', Validators.required]
@@ -62,6 +56,12 @@ export class CreateComponent implements OnInit {
     this.pushNotificationInputGroup = this.fb.group({
       title: ['Final Grade', Validators.required],
       message: ['Your final grade for ETHNO 597 is now available.', Validators.required],
+    });
+  }
+
+  openBoomiFilterDialog(): void {
+    const dialogRef = this.dialog.open(BoomiFilterDialogComponent, {
+      width: '800px'
     });
   }
 

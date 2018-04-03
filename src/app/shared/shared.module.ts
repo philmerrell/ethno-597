@@ -25,6 +25,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatNativeDateModule } from '@angular/material/core';
 
+
 import { CKEditorModule } from 'ng2-ckeditor';
 import { BigInputComponent } from './big-input/big-input.component';
 import { BigInputActionComponent } from './big-input/big-input-action.component';
@@ -35,6 +36,8 @@ import { ActivityFeedCardComponent } from './activity-feed-card/activity-feed-ca
 import { AppShellComponent } from './app-shell/app-shell.component';
 import { HomeScreenShellComponent } from './home-screen-shell/home-screen-shell.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { LoadingStateDirective } from './loading-state.directive';
+import { BoomiFilterDialogComponent } from './boomi-filter-dialog/boomi-filter-dialog.component';
 
 @NgModule({
   imports: [
@@ -74,8 +77,12 @@ import { MatDialogModule } from '@angular/material/dialog';
     PhoneShellComponent,
     ActivityFeedCardComponent,
     AppShellComponent,
-    HomeScreenShellComponent
+    HomeScreenShellComponent,
+    LoadingStateDirective,
+    BoomiFilterDialogComponent,
+    BoomiFilterDialogComponent
   ],
+  entryComponents: [ BoomiFilterDialogComponent ],
   exports: [
     CommonModule,
     FormsModule,
@@ -110,7 +117,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     PhoneShellComponent,
     AppShellComponent,
     ActivityFeedCardComponent,
-    HomeScreenShellComponent
+    HomeScreenShellComponent,
+    LoadingStateDirective,
+    BoomiFilterDialogComponent
   ]
 })
 export class SharedModule { }
