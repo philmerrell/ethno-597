@@ -1,7 +1,7 @@
-<h2 mat-dialog-title>Boomi Filter</h2>
+<h2 mat-dialog-title><mat-icon class="fa fa-filter"></mat-icon>Boomi Filter</h2>
 <mat-dialog-content style="background: #e8e8e8">
   <div style="padding: 20px;">
-    <!-- <h3>Academic:</h3> -->
+    <!-- <strong>Academic:</strong> -->
       <form [formGroup]="targetGroup">
         <mat-accordion>
             <mat-expansion-panel>
@@ -11,19 +11,19 @@
                 </mat-panel-title>
               </mat-expansion-panel-header>
               <div style="margin-bottom: 20px;">
-                  <h3>By College:</h3>
+                  <strong>By College:</strong>
                   <section class="checkbox-section">
                     <mat-checkbox *ngFor="let college of targets.colleges" formControlName="colleges" class="checkbox-margin">{{college}}</mat-checkbox>
                   </section>
               </div>
               <div style="margin-bottom: 20px;">
-                  <h3>By Current Program:</h3>
+                  <strong>By Current Program:</strong>
                   <section class="checkbox-section">
                     <mat-checkbox *ngFor="let college of targets.majors" formControlName="majors" class="checkbox-margin">{{college}}</mat-checkbox>
                   </section>
               </div>
               <div style="margin-bottom: 20px;">
-                  <h3>By GPA:</h3>
+                  <strong>By GPA:</strong><br>
                   <mat-form-field class="full-width">
                     <input matInput type="number" step="0.1" min="0" max="4" formControlName="gpaMin" placeholder="Minimum">
                   </mat-form-field>
@@ -31,12 +31,22 @@
                       <input matInput type="number" step="0.1" min="0" max="4" formControlName="gpaMax" placeholder="Maximum">
                   </mat-form-field>
               </div>
+              <div style="margin-bottom: 20px;">
+                  <strong>Misc:</strong>
+                  <section class="checkbox-section">
+                    <mat-checkbox *ngFor="let item of targets.misc" formControlName="misc" class="checkbox-margin">{{item}}</mat-checkbox>
+                  </section>
+              </div>
+              <div class="margin-bottom">
+                  <strong>By Employee Type:</strong><br>
+                  <mat-radio-group class="example-radio-group" formControlName="employeeType">
+                    <mat-radio-button *ngFor="let type of targets.employees" [value]="type" class="checkbox-margin">{{type}}</mat-radio-button>
+                  </mat-radio-group>  
+              </div>
 
               
              
-              <!-- <mat-radio-group class="example-radio-group" >
-                <mat-radio-button *ngFor="let college of targets.colleges" [value]="college" class="example-radio-button">{{college}}</mat-radio-button>
-              </mat-radio-group> -->
+              
             </mat-expansion-panel>
             <mat-expansion-panel>
               <mat-expansion-panel-header>

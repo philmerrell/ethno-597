@@ -1,7 +1,7 @@
 <div class="background">
   <div class="gradient">
     <div class="container">
-      <button mat-button mat-raised-button [anmsLoadingState]="loading" (click)="testLoading()">
+      <button mat-button mat-raised-button [isLoading]="loading" (click)="testLoading()">
         Load Me
       </button>
       <h1>DESIGN BRIEF:</h1>
@@ -65,6 +65,12 @@
             to coordinate the delivery of messages to subscribing endpoints and clients.
             SNS is flexible in how it can be used and provides a variety of communication channels.
           </p>
+          <div class="actions">
+            <a [ngClass]="animateOnRouteEnter"
+              mat-raised-button color="primary" target="_blank" href="https://aws.amazon.com/sns/">
+              <i class="fa fa-amazon"></i> AWS: Simple Notification Service
+            </a>
+          </div>
           <h4>Viability</h4>
           <p>
             There are four primary channels to engage students with on a mobile device. They are: <b>Push Notifications</b>, 

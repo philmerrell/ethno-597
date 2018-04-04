@@ -2,17 +2,17 @@ import { Directive, Input, TemplateRef, ViewContainerRef, ElementRef, OnChanges,
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Directive({
-  selector: '[anmsLoadingState]'
+  selector: '[isLoading]'
 })
 export class LoadingStateDirective implements OnChanges {
-  @Input() anmsLoadingState;
+  @Input('isLoading') isLoading: boolean;
   loading = false;
-  initialTemplate;
+  originalText;
 
   constructor(private el: ElementRef) {}
 
   ngOnChanges(changes: SimpleChanges) {
-    if (changes['anmsLoadingState'].currentValue) {
+    if (changes['isLoading'].currentValue) {
       this.showLoadingText()
     } else {
       this.hideLoadingText();
@@ -20,15 +20,16 @@ export class LoadingStateDirective implements OnChanges {
   }
 
   showLoadingText() {
-    this.initialTemplate = this.el.nativeElement.innerHTML;
-    this.el.nativeElement.innerText = 'Loading...'
+    this.originalText = this.el.nativeElement.innerHTML;
+    this.el.nativeElement.innerHTML = '<h1>Test</h1>';
     this.el.nativeElement.disabled = true;
   }
 
   hideLoadingText() {
     this.el.nativeElement.disabled = false;
-    this.el.nativeElement.innerHTML = this.initialTemplate;
-    console.log('Not Loading...');
+    if (this.originalText) {
+      this.el.nativeElement.innerHTML = this.originalText;
+    }
   }
 
 }

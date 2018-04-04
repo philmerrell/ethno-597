@@ -11,10 +11,11 @@ export class BoomiFilterDialogComponent implements OnInit {
   targetGroup: FormGroup;
 
   targets = {
-    colleges: [ 'College of Arts and Sciences', 'College of Engineering', 'College of Business and Economics' ],
-    majors: ['Computer Science', 'Communication', 'Business', 'Spanish', 'Anthropology'],
-    residence: ['On Campus', 'Off Campus'],
-    employees: ['Faculty', 'Staff'],
+    colleges: [ 'College of Arts and Sciences', 'College of Engineering', 'College of Business and Economics', 'College of Innovation + Design' ],
+    majors: ['Computer Science', 'Communications', 'Business', 'Spanish', 'Anthropology'],
+    misc: ['Lives On Campus', 'Lives Off Campus', 'Online Only'],
+    employees: ['All', 'Faculty', 'Staff', 'Student Employees'],
+
   };
 
   constructor(private fb: FormBuilder) { }
@@ -23,6 +24,8 @@ export class BoomiFilterDialogComponent implements OnInit {
     this.targetGroup = this.fb.group({
       colleges: [''],
       majors: [''],
+      employeeType: [''],
+      misc: [''],
       gpaMin: [0.0, [Validators.min, Validators.max]],
       gpaMax: [4.0, [Validators.min, Validators.max]]
 
