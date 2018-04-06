@@ -1,0 +1,13 @@
+<div *ngIf="isLoading; then loading else notLoading"></div>
+
+<ng-template #loading>
+  <button mat-button mat-raised-button [color]="color" disabled>
+    <div style="padding-left: 10px; padding-right: 10px;"><mat-spinner diameter="30"></mat-spinner></div>
+  </button>
+</ng-template>
+
+<ng-template #notLoading>
+  <button mat-button mat-raised-button [color]="color">
+    <ng-content></ng-content>
+  </button>
+</ng-template>

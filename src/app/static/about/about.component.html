@@ -1,9 +1,10 @@
 <div class="background">
   <div class="gradient">
     <div class="container">
-      <button mat-button mat-raised-button [isLoading]="loading" (click)="testLoading()">
+      <!-- <button mat-button mat-raised-button [isLoading]="loading" (click)="testLoading()">
         Load Me
-      </button>
+      </button> -->
+      <anms-loading-button [isLoading]="loading" color="primary" (click)="testLoading()">Submit</anms-loading-button>
       <h1>DESIGN BRIEF:</h1>
       <h2>Tracking Student Engagement Through Mobile Device Channels</h2>
       <mat-card [ngClass]="animateOnRouteEnter" class="get-started">

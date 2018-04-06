@@ -38,6 +38,7 @@ import { HomeScreenShellComponent } from './home-screen-shell/home-screen-shell.
 import { MatDialogModule } from '@angular/material/dialog';
 import { LoadingStateDirective } from './loading-state.directive';
 import { BoomiFilterDialogComponent } from './boomi-filter-dialog/boomi-filter-dialog.component';
+import { LoadingButtonComponent } from './loading-button/loading-button.component';
 
 @NgModule({
   imports: [
@@ -78,9 +79,10 @@ import { BoomiFilterDialogComponent } from './boomi-filter-dialog/boomi-filter-d
     ActivityFeedCardComponent,
     AppShellComponent,
     HomeScreenShellComponent,
-    LoadingStateDirective,
+    // LoadingStateDirective,
     BoomiFilterDialogComponent,
-    BoomiFilterDialogComponent
+    BoomiFilterDialogComponent,
+    LoadingButtonComponent
   ],
   entryComponents: [ BoomiFilterDialogComponent ],
   exports: [
@@ -116,9 +118,10 @@ import { BoomiFilterDialogComponent } from './boomi-filter-dialog/boomi-filter-d
     TrustHtmlPipe, TrustUrlPipe,
     PhoneShellComponent,
     AppShellComponent,
+    LoadingButtonComponent,
     ActivityFeedCardComponent,
     HomeScreenShellComponent,
-    LoadingStateDirective,
+    // LoadingStateDirective,
     BoomiFilterDialogComponent
   ]
 })
