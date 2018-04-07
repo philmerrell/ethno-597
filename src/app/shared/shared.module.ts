@@ -36,7 +36,6 @@ import { ActivityFeedCardComponent } from './activity-feed-card/activity-feed-ca
 import { AppShellComponent } from './app-shell/app-shell.component';
 import { HomeScreenShellComponent } from './home-screen-shell/home-screen-shell.component';
 import { MatDialogModule } from '@angular/material/dialog';
-import { LoadingStateDirective } from './loading-state.directive';
 import { BoomiFilterDialogComponent } from './boomi-filter-dialog/boomi-filter-dialog.component';
 import { LoadingButtonComponent } from './loading-button/loading-button.component';
 
@@ -79,7 +78,6 @@ import { LoadingButtonComponent } from './loading-button/loading-button.componen
     ActivityFeedCardComponent,
     AppShellComponent,
     HomeScreenShellComponent,
-    // LoadingStateDirective,
     BoomiFilterDialogComponent,
     BoomiFilterDialogComponent,
     LoadingButtonComponent
@@ -121,7 +119,6 @@ import { LoadingButtonComponent } from './loading-button/loading-button.componen
     LoadingButtonComponent,
     ActivityFeedCardComponent,
     HomeScreenShellComponent,
-    // LoadingStateDirective,
     BoomiFilterDialogComponent
   ]
 })
