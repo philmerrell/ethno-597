@@ -88,7 +88,6 @@ import { LoadingButtonComponent } from './loading-button/loading-button.componen
     FormsModule,
     ReactiveFormsModule,
     CKEditorModule,
-
     MatButtonModule,
     MatDialogModule,
     MatMenuModule,
@@ -110,7 +109,6 @@ import { LoadingButtonComponent } from './loading-button/loading-button.componen
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
-
     BigInputComponent,
     BigInputActionComponent,
     TrustHtmlPipe, TrustUrlPipe,

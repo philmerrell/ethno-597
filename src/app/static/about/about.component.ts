@@ -5,6 +5,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { CustomerJourneyMapComponent } from '@app/static/customer-journey-map/customer-journey-map.component';
 import { InnovationVennDiagramComponent } from '@app/static/innovation-venn-diagram/innovation-venn-diagram.component';
 import { PersonasComponent } from '@app/static/personas/personas.component';
+import { FrameworkForDesignComponent } from '@app/static/framework-for-design/framework-for-design.component';
 
 @Component({
   selector: 'anms-about',
@@ -28,6 +29,12 @@ export class AboutComponent implements OnInit {
   openInnovationVennDiagram(): void {
     const dialogRef = this.dialog.open(InnovationVennDiagramComponent, {
       width: '800px'
+    });
+  }
+
+  openFrameworkForDesign(): void {
+    const dialogRef = this.dialog.open(FrameworkForDesignComponent, {
+      width: '100%'
     });
   }
 

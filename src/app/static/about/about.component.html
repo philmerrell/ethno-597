@@ -19,8 +19,16 @@
             How do we go about solving this? As an institution how do we know we are on the right path to building useful and innovative tools?
           </p>
           <p>&nbsp;</p>
-          <h3>A Framework for Design</h3>
-          <p>Design ethnography ... design thinking ...</p>
+          <!-- <h3>A Framework for Design</h3>
+          <p>Design ethnography ... design thinking ...</p> -->
+
+          <div class="actions">
+            <a [ngClass]="animateOnRouteEnter"
+              mat-raised-button color="primary" (click)="openFrameworkForDesign()">
+              <i class="fa fa-bullseye"></i> A Framework For Design
+            </a>
+          </div>
+
           <div style="float: left; padding: 10px; background: #eee; margin: 10px;">
             <img src="assets/papanek.jpg" width="200"><br>
             <span>A pretty cool dude.</span>
@@ -85,50 +93,7 @@
               <i class="fa fa-map"></i> Customer Journey Map
             </a>
           </div>
-        </mat-card-content>
-      </mat-card>
-      <mat-card [ngClass]="animateOnRouteEnter" class="get-started">
-        <mat-card-content>
-          <p>
-            The first phase of this study will be primarily concerned with interviewing stakeholders at Boise State and will explore four primary questions:
-          </p>
-          <ul>
-            <li>"Who do you communicate with?"</li>
-            <li>"At what particular time of year?"</li>
-            <li>"Through what means?"</li>
-            <li>"With what priority?"</li>
-          </ul>
-          <p>
-            Ultimately I would like to understand how and what various stakeholders on campus communicate to students 
-            in order to better inform campus needs. This communication tool would provide contextually relevant 
-            communication individualized to the student and a the most ideal time.
-          </p>
-          <p>
-            The current version of this application represents the accumluation of work for the Spring 2018 semester toward an interdisciplary
-            Master's degree at Boise State University. Here I explore potential solutions through proof of concept demos 
-            allowing administrators to send targeted communications to student mobile devices. 
-          </p>
-          <!-- <p>
-            The work represented here is the result of a design ethnography course at Boise State University
-           <small><em>(ETHNO 597: Fundamentals of Design Ethnography)</em></small>. The methods used to 
-            design these high-fidelity mock-ups were customer journey mapping, empathy maps, and stakeholder interviews.
-          </p>
-          <h3>Interviews:</h3>
-          <h3>Design Persona:</h3>
-          Personas help us to answer who are we designing for. They are useful for helping to align strategy and goals to particular groups of users. -->
-          
-
-
-
-          <p>
-            I want myBoiseState Mobile to be more focused on helping students navigate milestones, and important dates, and facilitate targeted communication. 
-            Less about providing links as an SSO hub.
-          </p>
-          <p>
-          </p>
           <div class="actions">
-            
-            
             <a [ngClass]="animateOnRouteEnter"
                 mat-raised-button color="primary" routerLink="../examples">
               Check Examples
@@ -149,22 +114,52 @@
               <i class="fa fa-medium"></i> Check Blog Posts
             </a>
           </div>
+        </mat-card-content>
+      </mat-card>
+      <!-- <mat-card [ngClass]="animateOnRouteEnter" class="get-started">
+        <mat-card-content>
+          <p>
+            The first phase of this study will be primarily concerned with interviewing stakeholders at Boise State and will explore four primary questions:
+          </p>
+          <ul>
+            <li>"Who do you communicate with?"</li>
+            <li>"At what particular time of year?"</li>
+            <li>"Through what means?"</li>
+            <li>"With what priority?"</li>
+          </ul>
+          <p>
+            Ultimately I would like to understand how and what various stakeholders on campus communicate to students 
+            in order to better inform campus needs. This communication tool would provide contextually relevant 
+            communication individualized to the student and a the most ideal time.
+          </p>
+          <p>
+            The current version of this application represents the accumluation of work for the Spring 2018 semester toward an interdisciplary
+            Master's degree at Boise State University. Here I explore potential solutions through proof of concept demos 
+            allowing administrators to send targeted communications to student mobile devices. 
+          </p>
+          <p>
+            The work represented here is the result of a design ethnography course at Boise State University
+           <small><em>(ETHNO 597: Fundamentals of Design Ethnography)</em></small>. The methods used to 
+            design these high-fidelity mock-ups were customer journey mapping, empathy maps, and stakeholder interviews.
+          </p>
+          <h3>Interviews:</h3>
+          <h3>Design Persona:</h3>
+          Personas help us to answer who are we designing for. They are useful for helping to align strategy and goals to particular groups of users.
+
+          <p>
+            I want myBoiseState Mobile to be more focused on helping students navigate milestones, and important dates, and facilitate targeted communication. 
+            Less about providing links as an SSO hub.
+          </p>
+          <p>
+          </p>
+         
           <h3>Under The Hood:</h3>
             Traditionally, software creation (or purchasing) at Boise State has been necessitated through a problem stakeholders have. The metric for 
             for success has been the delivery of a solution. Rarely have we asked, "What can technology do for us?". 
           <p></p>
 
         </mat-card-content>
-      </mat-card>
-      <!-- <div class="get-started" [ngClass]="animateOnRouteEnter">
-        <h2>Getting started</h2>
-        <b>git clone
-          https://github.com/tomastrajan/angular-ngrx-material-starter.git
-          new-project</b><br>
-        <b>cd new-project</b><br>
-        <b>npm install</b><br>
-        <b>npm start</b>
-      </div> -->
+      </mat-card> -->
     </div>
   </div>
 </div>
