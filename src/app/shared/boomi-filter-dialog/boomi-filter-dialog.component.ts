@@ -15,6 +15,7 @@ export class BoomiFilterDialogComponent implements OnInit {
     majors: ['Computer Science', 'Communications', 'Business', 'Spanish', 'Anthropology'],
     misc: ['Lives On Campus', 'Lives Off Campus', 'Online Only'],
     employees: ['All', 'Faculty', 'Staff', 'Student Employees'],
+    enrollmentType: ['All', 'Full-time', 'Part-time']
 
   };
 
